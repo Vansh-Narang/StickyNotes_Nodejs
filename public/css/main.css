@@ -1,0 +1,73 @@
+:root {
+    --background-color: #FFC700;
+    --bs-primary-rgb: #12296c;
+}
+
+body {
+    font-family: 'Poppins', 'sans-serif';
+    background-color: var(--background-color);
+    color: var(--bs-primary-rgb);
+    font-weight: 300;
+    font-size: 1.2rem;
+    background-image: url('../img/notesback.jpeg');
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Unbounded', cursive;
+    font-weight: 800;
+}
+
+.container-fluid-custom {
+    max-width: 1600px;
+}
+
+/* button  id added*/
+.btn {
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
+    border-radius: 2rem;
+}
+
+.nav-link {
+    font-family: 'Unbounded', cursive;
+    display: block;
+    padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
+    font-size: var(--bs-nav-link-font-size);
+    font-weight: var(--bs-nav-link-font-weight);
+    color: var(--bs-primary-rgb);
+    text-decoration: none;
+    background: 0 0;
+    border: 0;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
+}
+
+.text-muted {
+    --bs-text-opacity: 1;
+    color: var(--bs-primary-rgb) !important;
+}
+
+/* Home is accessed from the frontpage.ejs */
+@media (min-width:1200px) {
+    .home {
+        background:
+            url(../img/human3.jpeg) left bottom no-repeat,
+            url(../img/human2.jpeg) right bottom no-repeat,
+
+    }
+}
+
+.home-title::before {
+    /* content: url('../img/glitter.png'); */
+    position: absolute;
+    left: -50px;
+    top: -30px;
+}
+
+.home-title::after {
+    /* content: url('../img/glitter.png'); */
+    position: absolute;
+    right: -50px;
+    bottom: -30px;
+}
