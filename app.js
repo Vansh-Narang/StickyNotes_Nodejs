@@ -1,9 +1,17 @@
 require('dotenv').config();
-
+// const mongoose = require('mongoose')
 const express = require('express')
+require('./server/config/db')
+const session = require('express-session')
+const passport = require('passport')
+const mongoStore = require('connect-mongo')
 const expressLayouts = require('express-ejs-layouts')
 const app = express();
 const port = 3000
+
+//Use them above
+app.use(passport.initialize());
+app.use(passport.session());
 
 //Helps you to access from the html pages
 app.use(express.urlencoded({ extended: true }))
@@ -31,6 +39,7 @@ app.set("view engine", "ejs")
 //Routes
 app.use('/', require('./server/routes/index'));
 app.use('/', require('./server/routes/dashboard'));
+app.use('/', require('./server/routes/auth'))
 
 //handle 404 error
 app.get('*', (req, res) => {
