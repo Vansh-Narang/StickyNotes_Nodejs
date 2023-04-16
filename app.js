@@ -28,7 +28,15 @@ app.set("view engine", "ejs")
 //     //render means files like handlebars,ejs
 //     //send for files like html/css
 // })
+//Routes
 app.use('/', require('./server/routes/index'));
+app.use('/', require('./server/routes/dashboard'));
+
+//handle 404 error
+app.get('*', (req, res) => {
+    // res.status(404).send("404 Page Not Found")
+    res.status(404).render('404')
+})
 
 app.listen(port, () => {
     console.log("listening ");
